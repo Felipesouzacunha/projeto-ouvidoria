@@ -1,4 +1,4 @@
-ocorrencias = ['dfhs', 'asadad']
+ocorrencias = []
 opcao = 1
 
 while opcao != 5:
