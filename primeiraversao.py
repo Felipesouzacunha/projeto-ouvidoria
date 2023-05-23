@@ -10,7 +10,7 @@ while opcao != 5:
     if opcao == 1:
         if len(ocorrencias) == 0:
             print()
-            print('Não temos nenhuma ocorrência no momento! ')
+            print('Não temos nenhuma ocorrência no momento!')
         else:
             print()
             for i in range(len(ocorrencias)):
@@ -25,13 +25,13 @@ while opcao != 5:
         print()
         for i in range(len(ocorrencias)):
             print(i+1, ocorrencias[i])
-        removerOcorrencia = int(input('Número da ocrrência que deseja remover: '))
+        removerOcorrencia = int(input('Número da ocorrência que deseja remover: '))
         ocorrencias.pop(removerOcorrencia-1)
         print()
         print('Ocorrência Removida com sucesso!')
 
     elif opcao == 4:
-        numerodaocorrencia = int(input('Número da ocorrencia que deseja pesquisar: '))
+        numerodaocorrencia = int(input('Número da ocorrência que deseja pesquisar: '))
         print('Pesquisando...')
         print()
         print(ocorrencias[numerodaocorrencia-1])
