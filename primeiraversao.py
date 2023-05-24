@@ -46,6 +46,9 @@ while opcao != 6:
         print()
         print(ocorrencias[numerodaocorrencia-1])
 
+    elif opcao != 6:
+        print('Opção inválida!')
+
 print('=='*42)
 print()
 print('Obrigado por usar nosso sistema!')
