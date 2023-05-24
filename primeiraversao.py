@@ -1,10 +1,10 @@
 ocorrencias = []
 opcao = 1
 
-while opcao != 5:
+while opcao != 6:
     print()
-    print('-=-'*25)
-    print('[1]Listar ocorrências [2]Adicionar [3]Remover [4]Pesquisar [5]Sair')
+    print('-=-'*42)
+    print('[1]Listar ocorrências [2]Adicionar ocorrência [3]Remover ocorrência [4]Alterar ocorrência [5]Pesquisar ocorrência [6]Sair')
     opcao = int(input('Qual a opção desejada? '))
 
     if opcao == 1:
@@ -31,13 +31,21 @@ while opcao != 5:
         print('Ocorrência Removida com sucesso!')
 
     elif opcao == 4:
+        if len(ocorrencias) > 0:
+            for i in range(len(ocorrencias)):
+                print(i + 1, ocorrencias[i])
+            mudarocorrencia = int(input('Qual ocorrencia quer mudar? '))
+            ocorrencias[mudarocorrencia - 1] = str(input('Digite a nova ocorencia: '))
+            print('Nova ocorrênncia salva!')
+        else:
+            print('Não há ocorrências para alterar!')
+
+    elif opcao == 5:
         numerodaocorrencia = int(input('Número da ocorrência que deseja pesquisar: '))
         print('Pesquisando...')
         print()
         print(ocorrencias[numerodaocorrencia-1])
-    elif opcao != 5:
-        print('Opção inválida!')
 
-print('=='*25)
+print('=='*42)
 print()
-print('Saindo do programa!')
+print('Obrigado por usar nosso sistema!')
