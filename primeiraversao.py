@@ -17,7 +17,7 @@ while opcao != 6:
                 print(i+1, ocorrencias[i])
 
     elif opcao == 2:
-        novaOcorrencia = str(input('Qual a a sua ocorrência? '))
+        novaOcorrencia = str(input('Qual é a sua ocorrência? '))
         ocorrencias.append(novaOcorrencia)
         print('Ocorrência adicionada com sucesso!')
 
@@ -34,9 +34,14 @@ while opcao != 6:
         if len(ocorrencias) > 0:
             for i in range(len(ocorrencias)):
                 print(i + 1, ocorrencias[i])
-            mudarocorrencia = int(input('Qual ocorrencia quer mudar? '))
-            ocorrencias[mudarocorrencia - 1] = str(input('Digite a nova ocorencia: '))
-            print('Nova ocorrênncia salva!')
+            alterarocorrencia = int(input('Qual ocorrência deseja alterar? '))
+            alterarocorrencia -= 1
+            quantidadedeItens = len(ocorrencias)
+            if alterarocorrencia not in range(0, quantidadedeItens):
+                print('Não existe esta ocorrência. Tente novamente!')
+            else:
+                ocorrencias[alterarocorrencia] = str(input('Digite a nova ocorrência: '))
+                print('Nova ocorrênncia salva!')
         else:
             print('Não há ocorrências para alterar!')
 
