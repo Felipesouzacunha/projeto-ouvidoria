@@ -48,8 +48,13 @@ while opcao != 6:
     elif opcao == 5:
         numerodaocorrencia = int(input('Número da ocorrência que deseja pesquisar: '))
         print('Pesquisando...')
+        numerodaocorrencia -= 1
+        quantidadedeItens = len(ocorrencias)
         print()
-        print(ocorrencias[numerodaocorrencia-1])
+        if numerodaocorrencia not in range(0,quantidadedeItens):
+            print('Não há esta ocorrência!')
+        else:
+            print(ocorrencias[numerodaocorrencia])
 
     elif opcao != 6:
         print('Opção inválida!')
