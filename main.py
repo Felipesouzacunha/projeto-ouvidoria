@@ -50,4 +50,13 @@ while opcao != 8:
                 for manifestacao in manifestacoes:
                     print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da manifestação: {manifestacao[3]}')
             else:
+                print()
                 print('Não há Reclamações! ')
+
+    elif opcao != 8:
+        print('Opção inválida!')
+
+print()
+print('Obrigrado por usar a nossa ouvidoria!')
+print('Saindo do sistema...')
+encerrarBancoDados(conexao)
