@@ -20,7 +20,8 @@ while opcao != 8:
         else:
             for manifestacao in manifestacoes:
                 print(
-                    f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da manifestação: {manifestacao[3]} - Tipo da manifestação: {manifestacao[4]}')
+                    f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da '
+                    f'manifestação: {manifestacao[3]} - Tipo da manifestação: {manifestacao[4]}')
 
     elif opcao == 2:
         print('Listagem de manifestação por tipo: ')
@@ -30,7 +31,8 @@ while opcao != 8:
             if len(manifestacoes) > 0:
                 print('Listagem de Elogios: ')
                 for manifestacao in manifestacoes:
-                    print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da manifestação: {manifestacao[3]}')
+                    print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
+                          f'ção da manifestação: {manifestacao[3]}')
             else:
                 print('Não há Elogios!')
 
@@ -39,7 +41,8 @@ while opcao != 8:
             if len(manifestacoes) > 0:
                 print('Listagem de Sugestões: ')
                 for manifestacao in manifestacoes:
-                    print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da manifestação: {manifestacao[3]}')
+                    print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
+                          f'ção da manifestação: {manifestacao[3]}')
             else:
                 print('Não há Sugestões!')
 
@@ -48,10 +51,35 @@ while opcao != 8:
             if len(manifestacoes) > 0:
                 print('Listagem de Reclamações: ')
                 for manifestacao in manifestacoes:
-                    print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da manifestação: {manifestacao[3]}')
+                    print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
+                          f'ção da manifestação: {manifestacao[3]}')
             else:
                 print()
                 print('Não há Reclamações! ')
+
+    elif opcao == 3:
+        print()
+        print("3) Criar uma nova Manifestação")
+        print()
+        print("Escolha o tipo de Manifestação:")
+        print("1)Reclamações 2)Sugestões 3)Elogios ")
+        tipodocomentarios = int(input("Digite o seu tipo de manifestação: "))
+        if tipodocomentarios == 1:
+            tipodocomentarios = "Reclamação"
+        elif tipodocomentarios == 2:
+            tipodocomentarios = "Sugestão"
+        elif tipodocomentarios == 3:
+            tipodocomentarios = "Elogio"
+        else:
+            print("Opção invalida")
+
+        titulo = input("Digite o título: ")
+        comentario = input("Digite o seu comentario: ")
+        nome = input("Digite o seu nome: ")
+        sqlInsercao = 'insert into ouvidoria( comentario,titulo , nome,tipodocomentarios) values(%s,%s,%s,%s)'
+        valores = [comentario, titulo, nome, tipodocomentarios]
+        insertNoBancoDados(conexao, sqlInsercao, valores)
+        print("Comentario cadastrado com sucesso!")
 
     elif opcao != 8:
         print('Opção inválida!')
