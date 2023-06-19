@@ -16,7 +16,7 @@ while opcao != 8:
     if opcao == 1:
         manifestacoes = listartudo(conexao)
         if len(manifestacoes) == 0:
-            print('Não há manifestações!')
+            print('Não há manifestações cadastradas!')
         else:
             for manifestacao in manifestacoes:
                 print(
@@ -34,7 +34,7 @@ while opcao != 8:
                     print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
                           f'ção da manifestação: {manifestacao[3]}')
             else:
-                print('Não há Elogios!')
+                print('Não há Elogios cadastrados!')
 
         elif opcaodelistagem == 2:
             manifestacoes = listarportipo(conexao, opcaodelistagem)
@@ -44,7 +44,7 @@ while opcao != 8:
                     print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
                           f'ção da manifestação: {manifestacao[3]}')
             else:
-                print('Não há Sugestões!')
+                print('Não há Sugestões cadastradas!')
 
         elif opcaodelistagem == 3:
             manifestacoes = listarportipo(conexao, opcaodelistagem)
@@ -55,7 +55,7 @@ while opcao != 8:
                           f'ção da manifestação: {manifestacao[3]}')
             else:
                 print()
-                print('Não há Reclamações! ')
+                print('Não há Reclamações cadastradas! ')
 
     elif opcao == 3:
         print()
