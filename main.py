@@ -81,6 +81,7 @@ while opcao != 8:
         insertNoBancoDados(conexao, sqlInsercao, valores)
         print("Comentario cadastrado com sucesso!")
 
+
     elif opcao != 8:
         print('Opção inválida!')
 
