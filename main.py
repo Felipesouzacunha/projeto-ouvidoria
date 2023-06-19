@@ -78,9 +78,7 @@ while opcao != 8:
         titulo = input("Digite o título: ")
         comentario = input("Digite o seu comentario: ")
         nome = input("Digite o seu nome: ")
-        sqlInsercao = 'insert into ouvidoria( comentario,titulo , nome,tipodocomentarios) values(%s,%s,%s,%s)'
-        valores = [comentario, titulo, nome, tipodocomentarios]
-        insertNoBancoDados(conexao, sqlInsercao, valores)
+        criarmanifestacao(conexao, titulo, comentario, nome, tipodocomentarios)
         print("Comentario cadastrado com sucesso!")
 
     elif opcao != 8:

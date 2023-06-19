@@ -1,7 +1,7 @@
 from operacoesbd import *
 
 def listartudo(conexao):
-    sqlListar = 'select * from manifestacao'
+    sqlListar = 'select * from ouvidoria'
     manifestacoes = listarBancoDados(conexao, sqlListar)
     print()
     return manifestacoes
@@ -21,3 +21,8 @@ def listarportipo(conexao, opcaodelistagem):
         sqllistar = "select * from manifestacao where tipo = 'Reclamação'"
         manifestacoes = listarBancoDados(conexao, sqllistar)
         return manifestacoes
+
+def criarmanifestacao(conexao, titulo, comentario, nome, tipocomentario):
+    sqlInsercao = 'insert into ouvidoria(titulo, comentario, nome, tipodocomentarios) values(%s,%s,%s,%s)'
+    valores = [titulo, comentario, nome, tipocomentario]
+    insertNoBancoDados(conexao, sqlInsercao, valores)
