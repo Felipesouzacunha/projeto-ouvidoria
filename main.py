@@ -3,7 +3,7 @@ from metodos import *
 
 conexao = abrirBancoDados('localhost', 'root', '12345', 'ouvidoria')
 manifestacao = []
-tipo = ''
+tipodocomentarios = ''
 opcao = 0
 while opcao != 8:
     print()
@@ -63,15 +63,17 @@ while opcao != 8:
         print()
         print("Escolha o tipo de Manifestação:")
         print("1)Reclamações 2)Sugestões 3)Elogios ")
-        tipodocomentarios = int(input("Digite o seu tipo de manifestação: "))
-        if tipodocomentarios == 1:
-            tipodocomentarios = "Reclamação"
-        elif tipodocomentarios == 2:
-            tipodocomentarios = "Sugestão"
-        elif tipodocomentarios == 3:
-            tipodocomentarios = "Elogio"
-        else:
-            print("Opção invalida")
+        opcaotipo = 0
+        while opcaotipo != 1 and opcaotipo != 2 and opcaotipo != 3:
+            opcaotipo = int(input("Digite o seu tipo de manifestação: "))
+            if opcaotipo == 1:
+                tipodocomentarios = "Reclamação"
+            elif opcaotipo == 2:
+                tipodocomentarios = "Sugestão"
+            elif opcaotipo == 3:
+                tipodocomentarios = "Elogio"
+            else:
+                print("Opção invalida")
 
         titulo = input("Digite o título: ")
         comentario = input("Digite o seu comentario: ")
@@ -80,7 +82,6 @@ while opcao != 8:
         valores = [comentario, titulo, nome, tipodocomentarios]
         insertNoBancoDados(conexao, sqlInsercao, valores)
         print("Comentario cadastrado com sucesso!")
-
 
     elif opcao != 8:
         print('Opção inválida!')
