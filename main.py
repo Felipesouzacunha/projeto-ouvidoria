@@ -25,11 +25,11 @@ while opcao != 8:
 
     elif opcao == 2:
         print('Listagem de manifestação por tipo: ')
-        opcaodelistagem = int(input('1)Elogios\n2)Sugestão\n3)Reclamações\nEscolha a opção desejada: '))
+        opcaodelistagem = int(input('1)Reclamação\n2)Sugestão\n3)Elogio\nEscolha a opção desejada: '))
         manifestacoes = listarportipo(conexao, opcaodelistagem)
         if opcaodelistagem == 1:
             if len(manifestacoes) > 0:
-                print('Listagem de Elogios: ')
+                print('Listagem de Reclamação: ')
                 for manifestacao in manifestacoes:
                     print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
                           f'ção da manifestação: {manifestacao[3]}')
@@ -49,7 +49,7 @@ while opcao != 8:
         elif opcaodelistagem == 3:
             manifestacoes = listarportipo(conexao, opcaodelistagem)
             if len(manifestacoes) > 0:
-                print('Listagem de Reclamações: ')
+                print('Listagem de Elogio: ')
                 for manifestacao in manifestacoes:
                     print(f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descri'
                           f'ção da manifestação: {manifestacao[3]}')

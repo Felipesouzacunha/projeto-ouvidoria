@@ -8,17 +8,17 @@ def listartudo(conexao):
 
 def listarportipo(conexao, opcaodelistagem):
     if opcaodelistagem == 1:
-        sqlListar = "select * from ouvidoria where tipo = 'Elogio'"
+        sqlListar = "select * from ouvidoria where tipodocomentarios = 'Reclamação'"
         manifestacoes = listarBancoDados(conexao, sqlListar)
         return manifestacoes
 
     if opcaodelistagem == 2:
-        sqllistar = "select * from ouvidoria where tipo = 'Sugestão'"
+        sqllistar = "select * from ouvidoria where tipodocomentarios = 'Sugestão'"
         manifestacoes = listarBancoDados(conexao, sqllistar)
         return manifestacoes
 
     if opcaodelistagem == 3:
-        sqllistar = "select * from ouvidoria where tipo = 'Reclamação'"
+        sqllistar = "select * from ouvidoria where tipodocomentarios = 'Elogio'"
         manifestacoes = listarBancoDados(conexao, sqllistar)
         return manifestacoes
 
