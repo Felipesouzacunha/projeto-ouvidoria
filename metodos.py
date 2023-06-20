@@ -26,3 +26,8 @@ def criarmanifestacao(conexao, titulo, comentario, nome, tipocomentario):
     sqlInsercao = 'insert into ouvidoria (titulo, comentario, nome, tipodocomentarios) values (%s,%s,%s,%s)'
     valores = [titulo, comentario, nome, tipocomentario]
     insertNoBancoDados(conexao, sqlInsercao, valores)
+
+def contagemdemanifestacao(conexao):
+    sqlcontagem = 'select count (*) from ouvidoria '
+    resultado = listarBancoDados(conexao, sqlcontagem)
+    return resultado
