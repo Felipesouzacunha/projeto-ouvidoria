@@ -91,13 +91,12 @@ while opcao != 8:
     elif opcao == 5:
         print()
         ouvidoriacodigo = input("Digite o codigo da Manifestação: ")
-        resultado = pesquisarPorCodigo(conexao,ouvidoriacodigo)
+        manifestacao = pesquisarPorCodigo(conexao, ouvidoriacodigo)
         if len(manifestacao) == 0:
             print("Codigo invalido")
         else:
-          for op in manifestacao:
-             print("CODIGO", op[0], "-", "TITULO: ", op[1], "-", "COMENTARIO", op[2], "-", "NOME:", op[3], "-", "TIPO:",
-                  op[4])
+            for elementos in manifestacao:
+                print(f'Nome: {elementos[1]} - Titulo: {elementos[2]} - Descrição da manifestação: {elementos[3]} - Tipo da manifestação: {elementos[4]}')
 
     elif opcao == 6:
         codigo = input('Digite o codigo de manifestação que deseja alterar: ')

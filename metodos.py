@@ -29,13 +29,16 @@ def criarmanifestacao(conexao, titulo, comentario, nome, tipocomentario):
 def pesquisarPorCodigo(conexao,ouvidoriacodigo):
     listaPorTipo = 'select * from ouvidoria where codigo = ' + ouvidoriacodigo
     manifestacao = listarBancoDados(conexao, listaPorTipo)
-
-    valores = [titulo, comentario, nome, tipocomentario]
-    insertNoBancoDados(conexao, sqlInsercao, valores)
+    return manifestacao
 
 def contagemdemanifestacao(conexao):
     sqlcontagem = 'select count(*) from ouvidoria '
     resultado = listarBancoDados(conexao, sqlcontagem)
+    return resultado
+
+def checagemdemanifestcao(conexao, ouvidoriacodigo):
+    sqllistar = 'select count(*) from ouvidoria where codigo =' + ouvidoriacodigo
+    resultado = listarBancoDados(conexao, sqllistar)
     return resultado
 
 def alterarmanifestacao(conexao, codigo, novotitulo, novadescricao):
@@ -43,9 +46,6 @@ def alterarmanifestacao(conexao, codigo, novotitulo, novadescricao):
     valores = [novotitulo, novadescricao, codigo]
     atualizarBancoDados(conexao,sqlalterar, valores)
 
-def pesquisarPorCodigo(conexao,ouvidoriacodigo):
-    listaPorTipo = 'select * from ouvidoria where codigo = ' + ouvidoriacodigo
-    manifestacao = listarBancoDados(conexao, listaPorTipo)
 
 def deletarManifestacaoPorCodigo(conexao,codigodelete):
     manifestacao = 'delete from ouvidoria where codigo = %s '
