@@ -23,6 +23,8 @@ def listarportipo(conexao, opcaodelistagem):
 
 def criarmanifestacao(conexao, titulo, comentario, nome, tipocomentario):
     sqlInsercao = 'insert into ouvidoria (titulo, comentario, nome, tipodocomentarios) values (%s,%s,%s,%s)'
+    valores = [titulo, comentario, nome, tipocomentario]
+    insertNoBancoDados(conexao,sqlInsercao,valores)
 
 def pesquisarPorCodigo(conexao,ouvidoriacodigo):
     listaPorTipo = 'select * from ouvidoria where codigo = ' + ouvidoriacodigo
@@ -32,7 +34,7 @@ def pesquisarPorCodigo(conexao,ouvidoriacodigo):
     insertNoBancoDados(conexao, sqlInsercao, valores)
 
 def contagemdemanifestacao(conexao):
-    sqlcontagem = 'select count (*) from ouvidoria '
+    sqlcontagem = 'select count(*) from ouvidoria '
     resultado = listarBancoDados(conexao, sqlcontagem)
     return resultado
 
