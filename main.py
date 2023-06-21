@@ -101,7 +101,7 @@ while opcao != 8:
     elif opcao == 6:
         codigo = input('Digite o codigo de manifestação que deseja alterar: ')
         print()
-        resultado = checagemdemanifestacao(conexao, codigo)
+        resultado = checagemdemanifestcao(conexao, codigo)
         if resultado[0][0] == 0:
             print('Manifetação não existente!')
         else:

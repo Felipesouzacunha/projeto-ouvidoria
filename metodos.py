@@ -36,15 +36,15 @@ def contagemdemanifestacao(conexao):
     resultado = listarBancoDados(conexao, sqlcontagem)
     return resultado
 
-def checagemdemanifestcao(conexao, ouvidoriacodigo):
-    sqllistar = 'select count(*) from ouvidoria where codigo =' + ouvidoriacodigo
+def checagemdemanifestcao(conexao, codigo):
+    sqllistar = 'select count(*) from ouvidoria where codigo =' + codigo
     resultado = listarBancoDados(conexao, sqllistar)
     return resultado
 
 def alterarmanifestacao(conexao, codigo, novotitulo, novadescricao):
-    sqlalterar = 'update ouvidoria set titulo = %s, descricao = %s where codigo = %s'
+    sqlalterar = 'update ouvidoria set titulo = %s, comentario = %s where codigo = %s'
     valores = [novotitulo, novadescricao, codigo]
-    atualizarBancoDados(conexao,sqlalterar, valores)
+    atualizarBancoDados(conexao, sqlalterar, valores)
 
 
 def deletarManifestacaoPorCodigo(conexao,codigodelete):
