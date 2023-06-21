@@ -111,6 +111,26 @@ while opcao != 8:
             alterarmanifestacao(conexao, codigo, novotitulo, novadescricao)
             print('Manifestação atualizada com sucesso! ')
             
+    elif opcao == 7:
+        manifestacoes = listartudo(conexao)
+        if len(manifestacoes) == 0:
+            print('Não há manifestações cadastradas!')
+        else:
+            for manifestacao in manifestacoes:
+                print(
+                    f'Codigo: {manifestacao[0]} - Nome: {manifestacao[1]} - Titulo: {manifestacao[2]} - Descrição da '
+                    f'manifestação: {manifestacao[3]} - Tipo da manifestação: {manifestacao[4]}')
+                
+            print()
+            ouvidoriacodigo = input("Digite o codigo da Manifestação: ")
+            resultado = pesquisarPorCodigo(conexao,ouvidoriacodigo)
+            
+            if len(manifestacao) == 0:
+                print("CODIGO INVALIDO")
+            else:
+                resultado = deletarManifestacaoPorCodigo(conexao,ouvidoriacodigo)
+                print("Manifestação deletada com sucesso")        
+            
     elif opcao != 8:
         print('Opção inválida!')
 
