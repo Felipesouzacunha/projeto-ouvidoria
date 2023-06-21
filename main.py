@@ -81,6 +81,13 @@ while opcao != 8:
         criarmanifestacao(conexao, titulo, comentario, nome, tipodocomentarios)
         print("Comentario cadastrado com sucesso!")
 
+    elif opcao == 4:
+        resultado = contagemdemanifestacao(conexao)
+        if len(resultado) > 0:
+            print(f'Há {resultado[0][0]} manifestações cadastradas')
+        else:
+            print('Não há nenhum item na lista!')
+
     elif opcao == 6:
         codigo = input('Digite o codigo de manifestação que deseja alterar: ')
         print()
@@ -93,13 +100,6 @@ while opcao != 8:
             alterarmanifestacao(conexao, codigo, novotitulo, novadescricao)
             print('Manifestação atualizada com sucesso! ')
             
-    elif opcao == 4:
-        resultado = contagemdemanifestacao(conexao)
-        if len(resultado) > 0:
-            print(f'Há {resultado[0][0]} manifestações cadastradas')
-        else:
-            print('Não há nenhum item na lista!')
-
     elif opcao != 8:
         print('Opção inválida!')
 
