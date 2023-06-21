@@ -131,10 +131,12 @@ while opcao != 8:
                 resultado = deletarManifestacaoPorCodigo(conexao,ouvidoriacodigo)
                 print("Manifestação deletada com sucesso")        
             
-    elif opcao != 8:
+    elif opcao == 8:
+        print()
+        print('Obrigrado por usar a nossa ouvidoria!')
+        print('Saindo do sistema...')
+        
+    else:
         print('Opção inválida!')
 
-print()
-print('Obrigrado por usar a nossa ouvidoria!')
-print('Saindo do sistema...')
 encerrarBancoDados(conexao)
