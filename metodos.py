@@ -31,3 +31,8 @@ def contagemdemanifestacao(conexao):
     sqlcontagem = 'select count (*) from ouvidoria '
     resultado = listarBancoDados(conexao, sqlcontagem)
     return resultado
+
+def alterarmanifestacao(conexao, codigo, novotitulo, novadescricao):
+    sqlalterar = 'update manifestacao set titulo = %s, descricao = %s where codigo = %s'
+    valores = [novotitulo, novadescricao, codigo]
+    atualizarBancoDados(conexao,sqlalterar, valores)
