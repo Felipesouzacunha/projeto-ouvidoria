@@ -23,6 +23,11 @@ def listarportipo(conexao, opcaodelistagem):
 
 def criarmanifestacao(conexao, titulo, comentario, nome, tipocomentario):
     sqlInsercao = 'insert into ouvidoria (titulo, comentario, nome, tipodocomentarios) values (%s,%s,%s,%s)'
+
+def pesquisarPorCodigo(conexao,ouvidoriacodigo):
+    listaPorTipo = 'select * from ouvidoria where codigo = ' + ouvidoriacodigo
+    manifestacao = listarBancoDados(conexao, listaPorTipo)
+
     valores = [titulo, comentario, nome, tipocomentario]
     insertNoBancoDados(conexao, sqlInsercao, valores)
 
