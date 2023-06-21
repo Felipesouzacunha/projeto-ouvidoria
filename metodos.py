@@ -40,3 +40,12 @@ def alterarmanifestacao(conexao, codigo, novotitulo, novadescricao):
     sqlalterar = 'update ouvidoria set titulo = %s, descricao = %s where codigo = %s'
     valores = [novotitulo, novadescricao, codigo]
     atualizarBancoDados(conexao,sqlalterar, valores)
+
+def pesquisarPorCodigo(conexao,ouvidoriacodigo):
+    listaPorTipo = 'select * from ouvidoria where codigo = ' + ouvidoriacodigo
+    manifestacao = listarBancoDados(conexao, listaPorTipo)
+
+def deletarManifestacaoPorCodigo(conexao,codigodelete):
+    manifestacao = 'delete from ouvidoria where codigo = %s '
+    dados = [codigodelete]
+    excluirBancoDados(conexao, manifestacao, dados)
