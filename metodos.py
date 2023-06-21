@@ -3,7 +3,6 @@ from operacoesbd import *
 def listartudo(conexao):
     sqlListar = 'select * from ouvidoria'
     manifestacoes = listarBancoDados(conexao, sqlListar)
-    print()
     return manifestacoes
 
 def listarportipo(conexao, opcaodelistagem):
