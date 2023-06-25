@@ -126,7 +126,7 @@ while opcao != 8:
             if resultado[0][0] == 0:
                 print('Manifetação não existente!')
             else:
-                rmanisfestacao = deletarManifestacaoPorCodigo(conexao,ouvidoriacodigo)
+                manisfestacao = deletarManifestacaoPorCodigo(conexao,ouvidoriacodigo)
                 print("Manifestação deletada com sucesso")        
             
     elif opcao == 8:
