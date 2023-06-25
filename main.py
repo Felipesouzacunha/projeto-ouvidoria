@@ -121,13 +121,12 @@ while opcao != 8:
                     f'manifestação: {manifestacao[3]} - Tipo da manifestação: {manifestacao[4]}')
                 
             print()
-            ouvidoriacodigo = input("Digite o codigo da Manifestação: ")
-            resultado = pesquisarPorCodigo(conexao,ouvidoriacodigo)
-            
-            if len(manifestacao) == 0:
-                print("CODIGO INVALIDO")
+            ouvidoriacodigo = input("Digite o codigo da Manifestação a ser deletada: ")
+            resultado = checagemdemanifestcao(conexao, ouvidoriacodigo)
+            if resultado[0][0] == 0:
+                print('Manifetação não existente!')
             else:
-                resultado = deletarManifestacaoPorCodigo(conexao,ouvidoriacodigo)
+                rmanisfestacao = deletarManifestacaoPorCodigo(conexao,ouvidoriacodigo)
                 print("Manifestação deletada com sucesso")        
             
     elif opcao == 8:

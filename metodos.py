@@ -51,3 +51,4 @@ def deletarManifestacaoPorCodigo(conexao,codigodelete):
     manifestacao = 'delete from ouvidoria where codigo = %s '
     dados = [codigodelete]
     excluirBancoDados(conexao, manifestacao, dados)
+    return manifestacao
