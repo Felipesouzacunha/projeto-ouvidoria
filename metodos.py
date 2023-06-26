@@ -32,7 +32,7 @@ def pesquisarPorCodigo(conexao,ouvidoriacodigo):
     return manifestacao
 
 def contagemdemanifestacao(conexao):
-    sqlcontagem = 'select count (*) from ouvidoria'
+    sqlcontagem = 'select count(*) from ouvidoria'
     resultado = listarBancoDados(conexao, sqlcontagem)
     return resultado
 
