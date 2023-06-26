@@ -82,7 +82,7 @@ while opcao != 8:
         print("Comentario cadastrado com sucesso!")
 
     elif opcao == 4:
-        resultado = contagemdemanifestacao(conexao)
+        resultado= contagemdemanifestacao(conexao)
         if len(resultado) > 0:
             print(f'Há {resultado[0][0]} manifestações cadastradas')
         else:
