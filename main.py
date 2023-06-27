@@ -40,7 +40,7 @@ while opcao != 8:
                       f'ção da manifestação: {manifestacao[3]}')
         else:
             print()
-            print('Não há Reclamações cadastradas! ')
+            print('Não há manifestções cadastradas! ')
 
     elif opcao == 3:
         print()
