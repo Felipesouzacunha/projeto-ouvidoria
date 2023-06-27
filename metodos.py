@@ -7,19 +7,15 @@ def listartudo(conexao):
 
 def listarportipo(conexao, opcaodelistagem):
     if opcaodelistagem == 1:
-        sqlListar = "select * from ouvidoria where tipodocomentarios = 'Reclamação'"
-        manifestacoes = listarBancoDados(conexao, sqlListar)
-        return manifestacoes
+        tipo = "'Reclamação'"
+    elif opcaodelistagem == 2:
+        tipo = "'Sugestão'"
+    elif opcaodelistagem == 3:
+        tipo = "'Elogio'"
 
-    if opcaodelistagem == 2:
-        sqllistar = "select * from ouvidoria where tipodocomentarios = 'Sugestão'"
-        manifestacoes = listarBancoDados(conexao, sqllistar)
-        return manifestacoes
-
-    if opcaodelistagem == 3:
-        sqllistar = "select * from ouvidoria where tipodocomentarios = 'Elogio'"
-        manifestacoes = listarBancoDados(conexao, sqllistar)
-        return manifestacoes
+    sqllistar = 'select * from ouvidoria where tipodocomentarios =' + tipo
+    manifestacoes = listarBancoDados(conexao, sqllistar)
+    return manifestacoes
 
 def criarmanifestacao(conexao, titulo, comentario, nome, tipocomentario):
     sqlInsercao = 'insert into ouvidoria (titulo, comentario, nome, tipodocomentarios) values (%s,%s,%s,%s)'
